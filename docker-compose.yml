@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  # The Database Infrastructure for benchmarking
+  db:
+    image: postgres:13-alpine
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: sports_db
+    ports:
+      - "5432:5432"
+
+  # Your Python Environment
+  benchmark-runner:
+    build: .
+    volumes:
+      - .:/app  # Maps your current folder to /app inside container
+    depends_on:
+      - db
+    environment:
+      # Connection string for the script to find the DB
+      DB_URL: "postgresql://user:password@db:5432/sports_db"
