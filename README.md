@@ -1,5 +1,3 @@
-# sports-injury-prediction-pipeline
-
 # Automated Feature Engineering Pipeline for Sports Injury Prediction
 
 ## Overview
