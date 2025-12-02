@@ -23,5 +23,5 @@ This project runs entirely in Docker to ensure reproducibility.
 4.  **Train Predictive Model**
    ```docker compose exec benchmark-runner python train_model.py```
 
-##Authors
+## Authors
 Titus Karuri, Devin Streeter
